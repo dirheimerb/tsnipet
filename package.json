@@ -1,0 +1,41 @@
+{
+  "name": "TSnipet",
+  "displayName": "Typescript Snippets",
+  "description": "Fully updated typescript v5, including utility types, custom types, and all the generic function signatures you need.",
+  "version": "0.0.1",
+  "publisher": "BradDirheimer",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "icon": "images/tslogo.jpeg",
+  "galleryBanner": {
+    "color": "#007ACC",
+    "theme": "dark"
+  },
+  "license": "MIT",
+  "categories": [
+    "Snippets",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "typescript",
+    "ts",
+    "snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.84.2",
+    "prettier": "^3.1.0"
+  },
+  "scripts": {
+    "publish": "vsce publish",
+    "format": "prettier --write \"**/*.{ts,json,md}\""
+  }
+}

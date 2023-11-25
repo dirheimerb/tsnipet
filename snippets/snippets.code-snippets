@@ -1,0 +1,1015 @@
+{
+	"typescript.type": {
+		"prefix": "ttype",
+		"body": [
+			"export type ${1:Type} = ${2:object}"
+		],
+		"description": "Create a TypeScript type definition"
+	},
+	"typescript.interface": {
+		"prefix": "tinter",
+		"body": [
+			"export interface ${1:Interface} {\n\t${2:prop}: ${3:type};\n}"
+		],
+		"description": "Create a TypeScript interface definition"
+	},
+	"typescript.module": {
+		"prefix": "tmod",
+		"body": [
+			"export module ${1:Module} {\n\t${2:prop}: ${3:type};\n}"
+		],
+		"description": "Create a TypeScript module definition"
+	},
+	"typescript.enum": {
+		"prefix": "tenum",
+		"body": [
+			"export enum ${1:Enum} {\n\t${2:prop} = ${3:value},\n}"
+		],
+		"description": "Create a TypeScript enum definition"
+	}
+	"typescript.Awaited<T>": {
+		"prefix": "taw",
+		"body": [
+			"Awaited<${1:object}>"
+		],
+		"description": "Typescript Utility - Awaited<T>"
+	},
+	"typescript.Partial<T>": {
+		"prefix": "tpar",
+		"body": [
+			"Partial<${1:object}>"
+		],
+		"description": "Typescript Utility - Partial<T>"
+	},
+	"typescript.Required<T>": {
+		"prefix": "treq",
+		"body": [
+			"Required<${1:object}>"
+		],
+		"description": "Typescript Utility - Required<T>"
+	},
+	"typescript.Readonly<T>": {
+		"prefix": "trea",
+		"body": [
+			"Readonly<${1:object}>"
+		],
+		"description": "Typescript Utility - Readonly<T>"
+	},
+	"typescript.Record<K, T>": {
+		"prefix": "trec",
+		"body": [
+			"Record<${1:key}, \${2:value}>"
+		],
+		"description": "Typescript Utility - Record<K, T>"
+	},
+	"typescript.Pick<T, K>": {
+		"prefix": "tpic",
+		"body": [
+			"Pick<${1:object}, ${2:keys}>"
+		],
+		"description": "Typescript Utility - Pick<T, K>"
+	},
+	"typescript.Omit<T, K>": {
+		"prefix": "tomi",
+		"body": [
+			"Omit<${1:object}, ${2:keys}>"
+		],
+		"description": "Typescript Utility - Omit<T, K>"
+	},
+	"typescript.Exclude<T, K>": {
+		"prefix": "texc",
+		"body": [
+			"Exclude<${1:object}, ${2:keys}>"
+		],
+		"description": "Typescript Utility - Exclude<T, K>"
+	},
+	"typescript.Extract<T, K>": {
+		"prefix": "texr",
+		"body": [
+			"Extract<${1:object}, ${2:keys}>"
+		],
+		"description": "Typescript Utility - Extract<T, K>"
+	},
+	"typescript.NonNullable<T>": {
+		"prefix": "tnnn",
+		"body": [
+			"NonNullable<${1:object}>"
+		],
+		"description": "Typescript Utility - NonNullable<T>"
+	},
+	"typescript.Parameters<T>": {
+		"prefix": "tpam",
+		"body": [
+			"Parameters<${1:object}>"
+		],
+		"description": "Typescript Utility - Parameters<T>"
+	},
+	"typescript.ConstructorParameters<T>": {
+		"prefix": "tcop",
+		"body": [
+			"ConstructorParameters<${1:object}>"
+		],
+		"description": "Typescript Utility - ConstructorParameters<T>"
+	},
+	"typescript.ReturnType<T>": {
+		"prefix": "trty",
+		"body": [
+			"ReturnType<${1:Function}>"
+		],
+		"description": "Typescript Utility - ReturnType<T>"
+	},
+	"typescript.InstanceType<T>": {
+		"prefix": "tity",
+		"body": [
+			"InstanceType<${1:object}>"
+		],
+		"description": "Typescript Utility - InstanceType<T>"
+	},
+	"typescript.ThisParameterType<T>": {
+		"prefix": "tths",
+		"body": [
+			"ThisParameterType<${1:Function}>"
+		],
+		"description": "Typescript Utility - ThisParameterType<T>"
+	},
+	"typescript.OmitThisParameter<T>": {
+		"prefix": "tomt",
+		"body": [
+			"OmitThisParameter<${1:Function}>"
+		],
+		"description": "Typescript Utility - OmitThisParameter<T>"
+	},
+	"typescript.ThisType<T>": {
+		"prefix": "ttht",
+		"body": [
+			"ThisType<${1:object}>"
+		],
+		"description": "Typescript Utility - ThisType<T>"
+	},
+	"typescript.Interface With Template Literal Property": {
+		"prefix": "stit",
+		"body": [
+			`interface ${1:Test} {
+				${2:word}: \`${3:property}\`
+			}`
+		],
+		"description": "Template Literal Type - Interface With Template Literal Property"
+	},
+	"typescript.Interface With Custom Property": {
+		"prefix": "stic",
+		"body": [
+			`interface ${1:Test} {
+				${2:word}: ${3:'property'}
+			}`
+		],
+		"description": "Template Literal Type - Interface With Custom Property"
+	},
+	"typescript.Union Type With Template Literal": {
+		"prefix": "stut",
+		"body": [
+			`${1:word} extends \`${2:type}\``
+		],
+		"description": "Template Literal Type - Union Type With Template Literal"
+	},
+	"typescript.Union Type With Custom Type": {
+		"prefix": "stuc",
+		"body": [
+			`${1:word} extends ${2:'type'}`
+		],
+		"description": "Template Literal Type - Union Type With Custom Type"
+	},
+	"typescript.Uppercase": {
+		"prefix": "tup",
+		"body": [
+			`type ${1:Uppercase} = Uppercase<${2:string}>`
+		],
+		"description": "Uppercase<StringType> Converts each character in the string to the uppercase version."
+		"Example": {
+			"type Greeting = Hello, world"
+			"type ShoutyGreeting = Uppercase<Greeting>"
+
+			"type ShoutyGreeting = HELLO, WORLD"
+
+			"type ASCIICacheKey<Str extends string> = `ID-${Uppercase<Str>}`"
+			"type MainID = ASCIICacheKey<'my_app'>"
+		}
+	},
+	"typescript.Lowercase": {
+		"prefix": "tlw",
+		"body": [
+			`type ${1:Lowercase} = Lowercase<${2:string}>`
+		],
+		"description": "Lowercase<StringType> Converts each character in the string to the lowercase version."
+		"Example": {
+			"type Greeting = Hello, world"
+			"type ShoutyGreeting = Lowercase<Greeting>"
+
+			"type ShoutyGreeting = hello, world"
+
+			"type ASCIICacheKey<Str extends string> = `ID-${Lowercase<Str>}`"
+			"type MainID = ASCIICacheKey<'MY_APP'>"
+		}
+	},
+	"typescript.Uncapitalize": {
+		"prefix": "tuc",
+		"body": [
+			`type ${1:Uncapitalize} = Uncapitalize<${2:string}>`
+		],
+		"description": "Uncapitalize<StringType> Converts the first character in the string to lowercase."
+		"Example": {
+			"type SomePath = '/foo/bar'"
+			"type RouteParams = Uncapitalize<'/foo/bar'>"
+
+			"type RouteParams = '/foo/bar'"
+		}
+	},
+
+	"typescript.OptionsFlags": {
+		"prefix": "tof",
+		"body": [
+			`type ${1:OptionsFlags} = {
+				[Property in keyof ${2:Type}]: ${3:boolean};
+			}`
+		],
+		"description": "OptionsFlags<Type> make every field in an object optional"
+	},
+	"typescript.RequiredFields": {
+		"prefix": "treqf",
+		"body": [
+			`type ${1:RequiredFields} = {
+				[Property in keyof ${2:Type}]-?: ${3:Type}[Property];
+			}`
+		],
+		"description": "RequiredFields<Type> make every field in an object required"
+	},
+	"typescript.PickFields": {
+		"prefix": "tpikf",
+		"body": [
+			`type ${1:PickFields} = {
+				[Property in keyof ${2:Type} as ${3:SomeType}[Property]]: ${4:Type}[Property];
+			}`
+		],
+		"description": "PickFields<Type, SomeType> pick a few specific fields out of an object and make them into a new object"
+	},
+	"typescript.OmitFields": {
+		"prefix": "tomif",
+		"body": [
+			`type ${1:OmitFields} = {
+				[Property in Exclude<keyof ${2:Type}, ${3:SomeType}] as Property]: ${4:Type}[Property];
+			}`
+		],
+		"description": "OmitFields<Type, SomeType> remove a few specific fields out of an object and make them into a new object"
+	},
+
+	"typescript.ReadonlyFields": {
+		"prefix": "tref",
+		"body": [
+			`type ${1:ReadonlyFields} = {
+				readonly [Property in keyof ${2:Type}]: ${3:Type}[Property];
+			}`
+		],
+		"description": "ReadonlyFields<Type> make every field in an object readonly"
+	},
+	"typescript.RequiredReadonlyFields": {
+		"prefix": "treref",
+		"body": [
+			`type ${1:RequiredReadonlyFields} = {
+				readonly [Property in keyof ${2:Type}]-?: ${3:Type}[Property];
+			}`
+		],
+		"description": "RequiredReadonlyFields<Type> make every field in an object required and readonly"
+	},
+	"typescript.PickReadonlyFields": {
+		"prefix": "tpiref",
+		"body": [
+			`type ${1:PickReadonlyFields} = {
+				readonly [Property in keyof ${2:Type} as ${3:SomeType}[Property]]: ${4:Type}[Property];
+			}`
+		],
+		"description": "PickReadonlyFields<Type, SomeType> pick a few specific fields out of an object and make them readonly"
+	},
+	"typescript.OmitReadonlyFields": {
+		"prefix": "tomiref",
+		"body": [
+			`type ${1:OmitReadonlyFields} = {
+				readonly [Property in Exclude<keyof ${2:Type}, ${3:SomeType}] as Property]: ${4:Type}[Property];
+			}`
+		],
+		"description": "OmitReadonlyFields<Type, SomeType> remove a few specific fields out of an object and make them readonly"
+	},
+	"typescript.Iterable": {
+		"prefix": "titr",
+		"body": [
+			`type ${1:Iterable} = {
+				[Symbol.iterator](): this;
+			}`
+		],
+		"description": "Iterable<Type> creates an iterable out of an object"
+	},
+	"typescript.IterableOf": {
+		"prefix": "titrof",
+		"body": [
+			`type ${1:IterableOf} = {
+				[Symbol.iterator](): IterableIterator<${2:Type}>;
+				${3:key}: ${4:Type};
+			}`
+		],
+		"description": "IterableOf<Type> creates an iterable out of an object with a specific type"
+	},
+	"typescript.IterableItems": {
+		"prefix": "titri",
+		"body": [
+			`type ${1:IterableItems} = {
+				[Symbol.iterator](): IterableIterator<${2:keyof typeof ${3:obj}> & symbol>;
+			}`
+		],
+		"description": "IterableItems<Type> creates an iterable out of an object with a specific type"
+	},
+	"typescript.IterableValues": {
+		"prefix": "titrv",
+		"body": [
+			`type ${1:IterableValues} = {
+				[Symbol.iterator](): IterableIterator<${2:Type}[keyof typeof ${3:Type}]>;
+			}`
+		],
+		"description": "IterableValues<Type> creates an iterable out of an object with a specific type"
+	},
+
+	"typescript.Object": {
+		"prefix": "tobj",
+		"body": [
+			`type ${1:Object} = {
+				${2:key}: ${3:Type}
+			}`
+		],
+		"description": "Object<Type> creates a new object with a specific type"
+	},
+	"typescript.ObjectKeys": {
+		"prefix": "tobjk",
+		"body": [
+			`type ${1:ObjectKeys} = {
+				[key in ${2:keyof typeof ${3:obj}]-?: ${4:Type};
+			}`
+		],
+		"description": "ObjectKeys<ObjectType> makes every field in an object required"
+	},
+	"typescript.ObjectValues": {
+		"prefix": "tobjv",
+		"body": [
+			`type ${1:ObjectValues} = {
+				[key in ${2:keyof typeof ${3:obj}]: ${4:Type};
+			}`
+		],
+		"description": "ObjectValues<ObjectType> makes every field in an object required"
+	},
+	"typescript.ObjectEntries": {
+		"prefix": "tobje",
+		"body": [
+			`type ${1:ObjectEntries} = {
+				[key in ${2:keyof typeof ${3:obj} as ${4:Type}]: ${5:Type};
+			}`
+		],
+		"description": "ObjectValues<ObjectType> makes every field in an object required"
+	},
+
+	"typescript.Promise": {
+		"prefix": "tprom",
+		"body": [
+			`type ${1:Promise} = {
+				then(onfulfilled?: ((${2:value}) => ${3:void}) | null | undefined, onrejected?: ((${4:reason}: any) => ${5:void}) | null | undefined): ${6:PromiseLike<${7:void} | any>;
+				catch(onrejected?: ((${8:reason}: any) => ${9:void}) | null | undefined): ${10:PromiseLike<${11:void} | any>;
+				finally(onfinally?: (() => ${12:void}) | null | undefined): ${13:PromiseLike<${14:void} | any>;
+			}`
+		],
+		"description": "Promise<Type> creates a new promise with a specific type"
+	},
+	"typescript.PromiseOf": {
+		"prefix": "tpromof",
+		"body": [
+			`type ${1:PromiseOf} = {
+				then(onfulfilled?: ((${2:value}) => ${3:Type}) | null | undefined, onrejected?: ((${4:reason}: any) => ${5:Type}) | null | undefined): ${6:PromiseLike<${7:Type}>;
+				catch(onrejected?: ((${8:reason}: any) => ${9:Type}) | null | undefined): ${10:PromiseLike<${11:Type}>;
+				finally(onfinally?: (() => ${12:Type}) | null | undefined): ${13:PromiseLike<${14:Type}>;
+			}`
+		],
+		"description": "PromiseOf<Type> creates a new promise with a specific type"
+	},
+	"typescript.PromiseType": {
+		"prefix": "tpromt",
+		"body": [
+			`type ${1:PromiseType} = {
+				then(onfulfilled?: ((${2:value}) => ${3:Type}) | null | undefined, onrejected?: ((${4:reason}: any) => ${5:Type}) | null | undefined): ${6:PromiseLike<${7:Type}>;
+				catch(onrejected?: ((${8:reason}: any) => ${9:Type}) | null | undefined): ${10:PromiseLike<${11:Type}>;
+			}`
+		],
+		"description": "PromiseType<Type> creates a new promise with a specific type"
+	},
+	"typescript.Proxy": {
+		"prefix": "tprx",
+		"body": [
+			`type ${1:Proxy} = {
+				getPrototypeOf(target: ${2:Type}): ${3:object} | null;
+				setPrototypeOf(target: ${4:Type}, v: ${5:unknown}): boolean;
+				isExtensible(target: ${6:Type}): boolean;
+				preventExtensions(target: ${7:Type}): boolean;
+				getOwnPropertyDescriptor(target: ${8:Type}, p: ${9:PropertyKey}): PropertyDescriptor | undefined;
+				defineProperty(target: ${10:Type}, p: ${11:PropertyKey}, attributes: ${12:PropertyDescriptor}): boolean;
+				has(target: ${13:Type}, p: ${14:PropertyKey}): boolean;
+				get(target: ${15:Type}, p: ${16:PropertyKey}, receiver: ${17:unknown}): ${18:unknown};
+				set(target: ${19:Type}, p: ${20:PropertyKey}, value: ${21:unknown}, receiver: ${22:unknown}): boolean;
+				deleteProperty(target: ${23:Type}, p: ${24:PropertyKey}): boolean;
+				ownKeys(target: ${25:Type}): PropertyKey[];
+				apply(target: ${26:Type}, thisArg: ${27:unknown}, argArray?: ${28:unknown}[] | undefined): ${29:unknown};
+				construct(target: ${30:Type}, argArray: ${31:unknown}[], newTarget?: ${32:unknown} | undefined): ${33:unknown};
+			}`
+		],
+		"description": "Proxy<Type> create a new proxy with a specific type"
+	},
+	"typescript.ProxyTo": {
+		"prefix": "tprxto",
+		"body": [
+			`type ${1:ProxyTo} = {
+				getPrototypeOf(target: ${2:Type}): ${3:object} | null;
+				setPrototypeOf(target: ${4:Type}, v: ${5:unknown}): boolean;
+				isExtensible(target: ${6:Type}): boolean;
+				preventExtensions(target: ${7:Type}): boolean;
+				getOwnPropertyDescriptor(target: ${8:Type}, p: ${9:PropertyKey}): PropertyDescriptor | undefined;
+				defineProperty(target: ${10:Type}, p: ${11:PropertyKey}, attributes: ${12:PropertyDescriptor}): boolean;
+				has(target: ${13:Type}, p: ${14:PropertyKey}): boolean;
+				get(target: ${15:Type}, p: ${16:PropertyKey}, receiver: ${17:unknown}): ${18:unknown};
+				set(target: ${19:Type}, p: ${20:PropertyKey}, value: ${21:unknown}, receiver: ${22:unknown}): boolean;
+				deleteProperty(target: ${23:Type}, p: ${24:PropertyKey}): boolean;
+				ownKeys(target: ${25:Type}): PropertyKey[];
+				apply(target: ${26:Type}, thisArg: ${27:unknown}, argArray?: ${28:unknown}[] | undefined): ${29:unknown};
+				construct(target: ${30:Type}, argArray: ${31:unknown}[], newTarget?: ${32:unknown} | undefined): ${33:unknown};
+			}`
+		],
+		"description": "ProxyTo<Type> create a new proxy with a specific type"
+	},
+	"typescript.ProxyOf": {
+		"prefix": "tprxof",
+		"body": [
+			`type ${1:ProxyOf} = {
+				getPrototypeOf(target: ${2:Type}): ${3:object} | null;
+				setPrototypeOf(target: ${4:Type}, v: ${5:unknown}): boolean;
+				isExtensible(target: ${6:Type}): boolean;
+				preventExtensions(target: ${7:Type}): boolean;
+				getOwnPropertyDescriptor(target: ${8:Type}, p: ${9:PropertyKey}): PropertyDescriptor | undefined;
+				defineProperty(target: ${10:Type}, p: ${11:PropertyKey}, attributes: ${12:PropertyDescriptor}): boolean;
+				has(target: ${13:Type}, p: ${14:PropertyKey}): boolean;
+				get(target: ${15:Type}, p: ${16:PropertyKey}, receiver: ${17:unknown}): ${18:unknown};
+				set(target: ${19:Type}, p: ${20:PropertyKey}, value: ${21:unknown}, receiver: ${22:unknown}): boolean;
+				deleteProperty(target: ${23:Type}, p: ${24:PropertyKey}): boolean;
+				ownKeys(target: ${25:Type}): PropertyKey[];
+				apply(target: ${26:Type}, thisArg: ${27:unknown}, argArray?: ${28:unknown}[] | undefined): ${29:unknown};
+				construct(target: ${30:Type}, argArray: ${31:unknown}[], newTarget?: ${32:unknown} | undefined): ${33:unknown};
+			}`
+		],
+		"description": "ProxyOf<Type> create a new proxy with a specific type"
+	},
+
+	"typescript.Set": {
+		"prefix": "tset",
+		"body": [
+			`type ${1:Set} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				forEach(callbackfn: (value: ${4:Type}, value2: ${5:Type}, set: this) => void, thisArg?: ${6:unknown} | undefined): void;
+				has(value: ${7:Type}): boolean;
+				readonly size: number;
+			}`
+		],
+		"description": "Set<Type> creates a new set with a specific type"
+	},
+	"typescript.SetOf": {
+		"prefix": "tsetof",
+		"body": [
+			`type ${1:SetOf} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				forEach(callbackfn: (value: ${4:Type}, value2: ${5:Type}, set: this) => void, thisArg?: ${6:unknown} | undefined): void;
+				has(value: ${7:Type}): boolean;
+				readonly size: number;
+			}`
+		],
+		"description": "SetOf<Type> creates a new set with a specific type"
+	},
+	"typescript.SetItems": {
+		"prefix": "tseti",
+		"body": [
+			`type ${1:SetItems} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				forEach(callbackfn: (value: ${4:Type}, value2: ${5:Type}, set: this) => void, thisArg?: ${6:unknown} | undefined): void;
+				has(value: ${7:Type}): boolean;
+				readonly size: number;
+			}`
+		],
+		"description": "SetItems<Type> creates a new set with a specific type"
+	},
+	"typescript.SetType": {
+		"prefix": "tsetty",
+		"body": [
+			`type ${1:SetType} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				forEach(callbackfn: (value: ${4:Type}, value2: ${5:Type}, set: this) => void, thisArg?: ${6:unknown} | undefined): void;
+				has(value: ${7:Type}): boolean;
+				readonly size: number;
+			}`
+		],
+		"description": "SetType<Type> creates a new set with a specific type"
+	},
+	"typescript.WeakMap": {
+		"prefix": "twmp",
+		"body": [
+			`type ${1:WeakMap} = {
+				clear(): void;
+				delete(key: ${2:Type}): boolean;
+				get(key: ${3:Type}): ${4:unknown} | undefined;
+				has(key: ${5:Type}): boolean;
+				set(key: ${6:Type}, value: ${7:unknown}): this;
+			}`
+		],
+		"description": "WeakMap<Type> creates a new weak map with a specific type"
+	},
+	"typescript.WeakMapType": {
+		"prefix": "twmpty",
+		"body": [
+			`type ${1:WeakMapType} = {
+				clear(): void;
+				delete(key: ${2:Type}): boolean;
+				get(key: ${3:Type}): ${4:unknown} | undefined;
+				has(key: ${5:Type}): boolean;
+				set(key: ${6:Type}, value: ${7:unknown}): this;
+			}`
+		],
+		"description": "WeakMapType<Type> creates a new weak map with a specific type"
+	},
+	"typescript.WeakMapOf": {
+		"prefix": "twmpof",
+		"body": [
+			`type ${1:WeakMapOf} = {
+				clear(): void;
+				delete(key: ${2:Type}): boolean;
+				get(key: ${3:Type}): ${4:unknown} | undefined;
+				has(key: ${5:Type}): boolean;
+				set(key: ${6:Type}, value: ${7:unknown}): this;
+			}`
+		],
+		"description": "WeakMapOf<Type> creates a new weak map with a specific type"
+	},
+	"typescript.WeakSet": {
+		"prefix": "twst",
+		"body": [
+			`type ${1:WeakSet} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				has(value: ${4:Type}): boolean;
+			}`
+		],
+		"description": "WeakSet<Type> creates a new weak set with a specific type"
+	},
+	"typescript.WeakSetType": {
+		"prefix": "twstty",
+		"body": [
+			`type ${1:WeakSetType} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				has(value: ${4:Type}): boolean;
+			}`
+		],
+		"description": "WeakSetType<Type> creates a new weak set with a specific type"
+	},
+	"typescript.WeakSetOf": {
+		"prefix": "twstof",
+		"body": [
+			`type ${1:WeakSetOf} = {
+				add(value: ${2:Type}): this;
+				clear(): void;
+				delete(value: ${3:Type}): boolean;
+				has(value: ${4:Type}): boolean;
+			}`
+		],
+		"description": "WeakSetOf<Type> creates a new weak set with a specific type"
+	},
+	"typescript.Union": {
+		"prefix": "tun",
+		"body": [
+			`type ${1:Union} = ${2:Type} | ${3:Type};`
+		],
+		"description": "Union<TypeA, TypeB> creates a new union type"
+	},
+	"typescript.UnionOf": {
+		"prefix": "tunof",
+		"body": [
+			`type ${1:UnionOf} = ${2:Type} | ${3:Type};`
+		],
+		"description": "UnionOf<TypeA, TypeB> creates a new union type"
+	},
+	"typescript.UnionTo": {
+		"prefix": "tunto",
+		"body": [
+			`type ${1:UnionTo} = ${2:Type} | ${3:Type};`
+		],
+		"description": "UnionTo<TypeA, TypeB> creates a new union type"
+	},
+	"typescript.Unionize": {
+		"prefix": "tuni",
+		"body": [
+			`type ${1:Unionize} = ${2:Type} | ${3:Type};`
+		],
+		"description": "Unionize<TypeA, TypeB> creates a new union type"
+	},
+	"typescript.Tuple": {
+		"prefix": "ttpl",
+		"body": [
+			`type ${1:Tuple} = [${2:Type}]`
+		],
+		"description": "Tuple<Type> creates a new tuple with a specific type"
+	},
+	"typescript.TupleOf": {
+		"prefix": "ttplof",
+		"body": [
+			`type ${1:TupleOf} = [${2:Type}]`
+		],
+		"description": "TupleOf<Type> creates a new tuple with a specific type"
+	},
+	"typescript.TupleTo": {
+		"prefix": "ttplto",
+		"body": [
+			`type ${1:TupleTo} = [${2:Type}]`
+		],
+		"description": "TupleTo<Type> creates a new tuple with a specific type"
+	},
+	"typescript.Literal": {
+		"prefix": "tlit",
+		"body": [
+			`type ${1:Literal} = ${2:'some_value'};`
+		],
+		"description": "Literal<StringLiteral> creates a new literal type"
+	},
+	"typescript.LiteralType": {
+		"prefix": "tlitty",
+		"body": [
+			`type ${1:LiteralType} = ${2:'some_value'};`
+		],
+		"description": "LiteralType<StringLiteral> creates a new literal type"
+	},
+	"typescript.LiteralTo": {
+		"prefix": "tlitto",
+		"body": [
+			`type ${1:LiteralTo} = ${2:'some_value'};`
+		],
+		"description": "LiteralTo<StringLiteral> creates a new literal type"
+	},
+	"typescript.Literable": {
+		"prefix": "tlitr",
+		"body": [
+			`type ${1:Literable} = ${2:'some_value'};`
+		],
+		"description": "Literable<StringLiteral> creates a new literal type"
+	},
+	"typescript.LiterableType": {
+		"prefix": "tlitrty",
+		"body": [
+			`type ${1:LiterableType} = ${2:'some_value'};`
+		],
+		"description": "LiterableType<StringLiteral> creates a new literal type"
+	},
+	"typescript.LiterableTo": {
+		"prefix": "tlitrto",
+		"body": [
+			`type ${1:LiterableTo} = ${2:'some_value'};`
+		],
+		"description": "LiterableTo<StringLiteral> creates a new literal type"
+	},
+	"typescript.Indexed": {
+		"prefix": "tind",
+		"body": [
+			`type ${1:Indexed} = {
+				${2:key}: ${3:Type}
+			}`
+		],
+		"description": "Indexed<StringLiteral, Object> creates a new object with a specific type indexed by a generic literal type"
+	},
+	"typescript.IndexedType": {
+		"prefix": "tindty",
+		"body": [
+			`type ${1:IndexedType} = {
+				${2:key}: ${3:Type}
+			}`
+		],
+		"description": "IndexedType<StringLiteral, Object> creates a new object with a specific type indexed by a generic literal type"
+	},
+	"typescript.IndexedTo": {
+		"prefix": "tindto",
+		"body": [
+			`type ${1:IndexedTo} = {
+				${2:key}: ${3:Type}
+			}`
+		],
+		"description": "IndexedTo<StringLiteral, Object> creates a new object with a specific type indexed by a generic literal type"
+	},
+	"typescript.MutTuple": {
+		"prefix": "tmttp",
+		"body": [
+			`type ${1:MutTuple} = [${2:Type}]`
+		],
+		"description": "MutTuple<Type> creates a new tuple with a specific type"
+	},
+	"typescript.MutTupleOf": {
+		"prefix": "tmttpof",
+		"body": [
+			`type ${1:MutTupleOf} = [${2:Type}]`
+		],
+		"description": "MutTupleOf<Type> creates a new tuple with a specific type"
+	},
+	"typescript.MutTupleTo": {
+		"prefix": "tmttpto",
+		"body": [
+			`type ${1:MutTupleTo} = [${2:Type}]`
+		],
+		"description": "MutTupleTo<Type> creates a new tuple with a specific type"
+	},
+	"typescript.MutLiteral": {
+		"prefix": "tmlit",
+		"body": [
+			`type ${1:MutLiteral} = ${2:'some_value'};`
+		],
+		"description": "MutLiteral<StringLiteral> creates a new literal type"
+	},
+	"typescript.MutLiteralType": {
+		"prefix": "tmlitty",
+		"body": [
+			`type ${1:MutLiteralType} = ${2:'some_value'};`
+		],
+		"description": "MutLiteralType<StringLiteral> creates a new literal type"
+	},
+	"typescript.MutLiteralTo": {
+		"prefix": "tmlitto",
+		"body": [
+			`type ${1:MutLiteralTo} = ${2:'some_value'};`
+		],
+		"description": "MutLiteralTo<StringLiteral> creates a new literal type"
+	},
+	"typescript.MutLiterable": {
+		"prefix": "tmlitr",
+		"body": [
+			`type ${1:MutLiterable} = ${2:'some_value'};`
+		],
+		"description": "MutLiterable<StringLiteral> creates a new literal type"
+	},
+	"typescript.MutLiterableType": {
+		"prefix": "tmlitrty",
+		"body": [
+			`type ${1:MutLiterableType} = ${2:'some_value'};`
+		],
+		"description": "MutLiterableType<StringLiteral> creates a new literal type"
+	},
+	"typescript.MutLiterableTo": {
+		"prefix": "tmlitrto",
+		"body": [
+			`type ${1:MutLiterableTo} = ${2:'some_value'};`
+		],
+		"description": "MutLiterableTo<StringLiteral> creates a new literal type"
+	},
+	"typescript.MutIndexed": {
+		"prefix": "tmind",
+		"body": [
+			`type ${1:MutIndexed} = {
+				${2:key}: ${3:Type}
+			}`
+		],
+		"description": "MutIndexed<StringLiteral, Object> creates a new object with a specific type indexed by a generic literal type"
+	},
+	"typescript.MutIndexedType": {
+		"prefix": "tmindty",
+		"body": [
+			`type ${1:MutIndexedType} = {
+				${2:key}: ${3:Type}
+			}`
+		],
+		"description": "MutIndexedType<StringLiteral, Object> creates a new object with a specific type indexed by a generic literal type"
+	},
+	"typescript.Class": {
+		"prefix": "tcls",
+		"body": [
+			`class ${1:Name} {
+				constructor(${2:args}) {
+					${3:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Class"
+	},
+	"typescript.Class With Constructor": {
+		"prefix": "tclsc",
+		"body": [
+			`class ${1:Name} {
+				constructor(${2:args}) {
+					${3:undefined};
+				}
+				${4:someMethod}(${5:args}) {
+					${6:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Class With Constructor"
+	},
+	"typescript.Class With Method": {
+		"prefix": "tclsm",
+		"body": [
+			`class ${1:Name} {
+				constructor(${2:args}) {
+					${3:undefined};
+				}
+				${4:someMethod}(${5:args}) {
+					${6:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Class With Method"
+	},
+	"typescript.Class With Private Fields": {
+		"prefix": "tclsp",
+		"body": [
+			`class ${1:Name} {
+				${2:#privateVar} = ${3:"privateVar"};
+				${4:_privateVar} = ${5:"privateVar"};
+				${6:#privateMethod}(${7:args}) {
+					${8:undefined};
+				}
+				${9:_privateMethod}(${10:args}) {
+					${11:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Class With Private Fields"
+	},
+	"typescript.Class with Static Methods": {
+		"prefix": "tclssm",
+		"body": [
+			`class ${1:Name} {
+				static ${2:someMethod}(${3:args}) {
+					${4:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Class with Static Methods"
+	},
+	"typescript.Class with Private Static Methods": {
+		"prefix": "tclssp",
+		"body": [
+			`class ${1:Name} {
+				static #${2:someMethod}(${3:args}) {
+					${4:undefined};
+				}
+				static ${5:_someMethod}(${6:args}) {
+					${7:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Class with Private Static Methods"
+	},
+	"typescript.Abstract": {
+		"prefix": "tabs",
+		"body": [
+			`abstract class ${1:Name} {
+				abstract someMethod(${2:args}): ${3:void};
+			}
+			export default ${1:Name};`
+		],
+		"description": "Abstract"
+	},
+	"typescript.Abstract with Constructor": {
+		"prefix": "tabsc",
+		"body": [
+			`abstract class ${1:Name} {
+				constructor(${2:args}) {
+					${3:undefined};
+				}
+				abstract someMethod(${4:args}): ${5:void};
+			}
+			export default ${1:Name};`
+		],
+		"description": "Abstract with Constructor"
+	},
+	"typescript.Abstract with Private Fields": {
+		"prefix": "tabsp",
+		"body": [
+			`abstract class ${1:Name} {
+				${2:#privateVar} = ${3:"privateVar"};
+				${4:_privateVar} = ${5:"privateVar"};
+				${6:#privateMethod}(${7:args}) {
+					${8:undefined};
+				}
+				${9:_privateMethod}(${10:args}) {
+					${11:undefined};
+				}
+				abstract someMethod(${12:args}): ${13:void};
+			}
+			export default ${1:Name};`
+		],
+		"description": "Abstract with Private Fields"
+	},
+	"typescript.Abstract with Static Methods": {
+		"prefix": "tabssm",
+		"body": [
+			`abstract class ${1:Name} {
+				static ${2:someMethod}(${3:args}): ${4:void};
+			}
+			export default ${1:Name};`
+		],
+		"description": "Abstract with Static Methods"
+	},
+	"typescript.Abstract with Private Static Methods": {
+		"prefix": "tabssp",
+		"body": [
+			`abstract class ${1:Name} {
+				static #${2:someMethod}(${3:args}) {
+					${4:undefined};
+				}
+				static ${5:_someMethod}(${6:args}) {
+					${7:undefined};
+				}
+			}
+			export default ${1:Name};`
+		],
+		"description": "Abstract with Private Static Methods"
+	},
+	"typescript.Interface": {
+		"prefix": "tint",
+		"body": [
+			`interface ${1:Name} {
+				${2:field}: ${3:Type};
+			}
+			export default ${1:Name};`
+		],
+		"description": "Interface"
+	},
+	"typescript.Declaration": {
+		"prefix": "tdec",
+		"body": [
+			`declare module "${1:lib}" {
+				${2:undefined};
+			}
+			export default ${1:lib};`
+		],
+		"description": "Declaration"
+	},
+	"JSON.parse": {
+		"prefix": "jpar",
+		"body": [
+			"JSON.parse(${1:object})"
+		],
+		"description": ""
+	},
+	"JSON.stringify": {
+		"prefix": "jstr",
+		"body": [
+			"JSON.stringify(${1:object})"
+		],
+		"description": ""
+	},
+	"console.log": {
+		"prefix": "clog",
+		"body": [
+			"console.log(${1:object})"
+		],
+		"description": ""
+	},
+	"console.error": {
+		"prefix": "cerr",
+		"body": [
+			"console.error(${1:object})"
+		],
+		"description": ""
+	},
+	"console.warn": {
+		"prefix": "cwarn",
+		"body": [
+			"console.warn(${1:object})"
+		],
+		"description": ""
+	},
+	"console.group": {
+		"prefix": "cgroup",
+		"body": [
+			"console.group('$1')"
+		],
+		"description": ""
+	}
+};
