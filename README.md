@@ -1,7 +1,5 @@
 # TSnippet: TypeScript Snippets for Visual Studio Code
 
-[![GitHub tag](https://img.shields.io/github/tag/dirheimerb/tsnippet.svg?label=version)](1.0.0)
-
 ![TSnippet](./images/tslogo.jpeg)
 
 ## Overview
@@ -59,6 +57,8 @@ Once installed, you can start using the snippets in any TypeScript file. Just ty
 For any issues, suggestions, or contributions, please visit the [TSnippet GitHub repository](https://github.com/dirheimerb/tsnippet). We welcome your feedback and contributions to make TSnippet even better for the TypeScript community.
 
 ## Release Notes
+
+ [Read More](https://dirheimerb.github.io/tsnipet/)
 
 ### 1.0.0
 
